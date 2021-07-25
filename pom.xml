@@ -95,6 +95,7 @@
                             <goal>repackage</goal>
                         </goals>
                         <configuration>
+                            <executable>true</executable>
                             <classifier>spring-boot</classifier>
                             <mainClass>
                                 org.baeldung.executable.ExecutableMavenJar
