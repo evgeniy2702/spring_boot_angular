@@ -1,0 +1,64 @@
+table  {
+    border-collapse: collapse;
+}
+
+table td, th  {
+    padding: 5px;
+}
+
+.create-button  {
+    color: blue;
+    cursor: pointer;
+    padding: 2px 5px;
+}
+.edit-button  {
+    padding: 2px 5px;
+    background: #25A6E1;
+    cursor: pointer;
+}
+
+.delete-button  {
+    padding: 2px 5px;
+    background: #CD5C5C;
+    cursor: pointer;
+}
+
+.container{
+    padding-top: 10px;
+}
+
+#modalDialog-bg{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+}
+#modalDialog {
+    position: fixed;
+    width: 250px;
+    left: 50%;
+    margin-left: -125px;
+    margin-top: 10%;
+    padding: 15px;
+    border-radius: 5px;
+    background: white;
+}
+
+#modalDialog.content{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#modalDialog.buttons-container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.pull-left{
+    display: inline-block;
+}
+.pull-right{
+    display: inline-block;
+}

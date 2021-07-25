@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"
+            th:src="@{https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js}"></script>
+    <link src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"
+            th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js}" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css}" >
+    <script th:src="@{/controllerJs.js}"></script>
+    <link th:href="@{/index.css}" rel="stylesheet" />
+
+    <head>
+<body ng-app="MonthManagement" ng-controller="MonthController">
+<h3>
+    Работа с месяцами года
+</h3>
+<form ng-submit="submitMonth(inputValue)">
+    <input type="hidden" th:placeholder="'Поиск'" ng-model="idValue"/>
+    <input type="text" id="subSring" th:placeholder="'Поиск'" ng-model="inputValue" />
+    <input type="submit" value="Поиск" class="blue-button" />
+</form>
+<hr/>
+<table border="1" >
+    <tbody>
+        <tr>
+            <th>Month No</th>
+            <th>Month Name</th>
+        </tr>
+        <!-- $scope.month -->
+        <tr ng-repeat="month in months" ng-click="clickElement($event,bool)">
+            <td id="{{ month.id }}" ng-bind="month.id"> </td>
+            <td id="{{ month.name }}" ng-bind="month.name" > </td>
+        </tr>
+        <!--<tr insert-td ng-click="clickElement($event,bool)" ng-show="insert">-->
+        </tr>
+    </tbody>
+</table>
+
+    <div id="buttonDiv" ng-model="bool">
+        <!--<td th:colspan="2" xmlns:th="http://www.w3.org/1999/xhtml">-->
+            <br/>
+            <button class="create-button" ng-click="createMonth(modal, inputValue)">CREATE</button>
+
+            <button  class="edit-button" ng-click="updateMonth(id,value, modal,bool)" ng-show="bool">UPDATE</button>
+
+            <button class="delete-button" ng-click="deleteMonth(idValue,modal, bool)" ng-show="bool">DELETE</button>
+        </td>
+    </div>
+
+
+<modal-dialog>    </modal-dialog>
+
+</body>
+</html>
