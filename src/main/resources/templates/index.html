@@ -2,15 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>AngularJS</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"
-            th:src="@{https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js}"></script>
     <link src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"
             th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js}" >
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css}" >
-    <script th:src="@{/controllerJs.js}"></script>
     <link th:href="@{/index.css}" rel="stylesheet" />
-
     <head>
 <body ng-app="MonthManagement" ng-controller="MonthController">
 <h3>
@@ -22,35 +18,52 @@
     <input type="submit" value="Поиск" class="blue-button" />
 </form>
 <hr/>
-<table border="1" >
-    <tbody>
-        <tr>
-            <th>Month No</th>
-            <th>Month Name</th>
-        </tr>
-        <!-- $scope.month -->
-        <tr ng-repeat="month in months" ng-click="clickElement($event,bool)">
-            <td id="{{ month.id }}" ng-bind="month.id"> </td>
-            <td id="{{ month.name }}" ng-bind="month.name" > </td>
-        </tr>
-        <!--<tr insert-td ng-click="clickElement($event,bool)" ng-show="insert">-->
-        </tr>
-    </tbody>
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Месяцы года</div>
+                <div class="panel-body">
+                    <table class="table table-striped" border="1" >
+                        <tbody>
+                        <tr>
+                            <th id="tnomber">Month No</th>
+                            <th id="tmonth">Month Name</th>
+                        </tr>
 
-    <div id="buttonDiv" ng-model="bool">
-        <!--<td th:colspan="2" xmlns:th="http://www.w3.org/1999/xhtml">-->
-            <br/>
-            <button class="create-button" ng-click="createMonth(modal, inputValue)">CREATE</button>
+                        <!-- $scope.month -->
+                        <tr ng-repeat="month in months" ng-click="clickElement($event,bool)" >
+                            <td id="{{ month.id }}" ng-bind="month.id"  > </td>
+                            <td id="{{ month.name }}" ng-bind="month.name" > </td>
+                        </tr>
 
-            <button  class="edit-button" ng-click="updateMonth(id,value, modal,bool)" ng-show="bool">UPDATE</button>
+                        </tbody>
+                    </table>
 
-            <button class="delete-button" ng-click="deleteMonth(idValue,modal, bool)" ng-show="bool">DELETE</button>
-        </td>
+                    <div id="buttonDiv" ng-model="bool">
+                        <br/>
+                        <button class="create-button" ng-click="createMonth(modal, inputValue)">CREATE</button>
+
+                        <button  class="edit-button" ng-click="updateMonth(id,value, modal,bool)" ng-show="bool">UPDATE</button>
+
+                        <button class="delete-button" ng-click="deleteMonth(idValue,modal, bool)" ng-show="bool">DELETE</button>
+
+                    </div>
+
+
+                    <modal-dialog>    </modal-dialog>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
 
-<modal-dialog>    </modal-dialog>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"
+        th:src="@{https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js}"></script>
+<script th:src="@{/controllerJs.js}"></script>
+<script th:src="@{/resizer.js}"></script>
 
 </body>
 </html>
