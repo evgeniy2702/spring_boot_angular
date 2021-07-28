@@ -1,6 +1,5 @@
 package com.test_task.controller;
 
-import com.test_task.model.InputValueString;
 import com.test_task.model.Month;
 import com.test_task.service.MonthService;
 import org.json.JSONObject;
@@ -20,11 +19,6 @@ public class MainRestController {
         this.monthService = monthService;
     }
 
-    @GetMapping(value = "/main/month/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
-    public Month getMonth(@PathVariable(value = "id", required = false) Long id){
-        return monthService.getMonth(id);
-    }
 
     @PostMapping(value = "/main/search", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
