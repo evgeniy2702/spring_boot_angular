@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: D:\LENOVO\Homework_java\Homework\Web\test_task\out\artifac
- ts\test_task_jar
-Main-Class: com.test_task.Application
-
